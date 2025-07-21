@@ -1,7 +1,16 @@
-## Robot Package Template
+🚗 Radio-Based Indoor Navigation of an Ackermann Vehicle
 
-This is a GitHub template. You can make your own copy by clicking the green "Use this template" button.
+This project implements indoor navigation for an Ackermann-steering robot using UWB-based localization, ROS 2 Humble, and ultrasonic sensors for obstacle detection. It supports both simulation in Gazebo and real-world deployment.
+🔧 Features
 
-It is recommended that you keep the repo/package name the same, but if you do change it, ensure you do a "Find all" using your IDE (or the built-in GitHub IDE by hitting the `.` key) and rename all instances of `my_robot` to whatever your project's name is.
+    UWB positioning for indoor localization
 
-Note that each directory currently has at least one file in it to ensure that git tracks the files (and, consequently, that a fresh clone has direcctories present for CMake to find). These example files can be removed if required (and the directories can be removed if `CMakeLists.txt` is adjusted accordingly).
+    Ackermann kinematic model
+
+    Gazebo simulation with URDF model
+
+    Obstacle avoidance using SRF08 sensors
+
+    RadioLink R9DS controller as HMI
+
+    Arduino integration for sensor and PWM decoding
