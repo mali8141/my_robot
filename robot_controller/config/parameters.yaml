@@ -1,0 +1,17 @@
+/**:
+  ros__parameters:
+    # Body params
+    body_length: 0.5
+    body_width: 0.3
+    wheel_connector_length: 0.1
+
+    # Wheel params
+    wheel_radius: 0.05
+    wheel_lengh: 0.03
+
+    # Kinematics and dynamics params
+    max_steering_angle: 0.6108652
+    max_steering_angular_velocity: 1.570796
+    max_steering_effort: 1.0
+    max_velocity: 5.0
+    max_effort: 10.0
