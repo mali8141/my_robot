@@ -17,7 +17,7 @@ def generate_launch_description():
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
     # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
 
-    package_name='my_robot' #<--- CHANGE ME
+    package_name='my_robot' 
 
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -30,13 +30,40 @@ def generate_launch_description():
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),
-             )
+                launch_arguments={
+                    'world': os.path.join(get_package_share_directory(package_name), 'worlds', 'empty.world'),
+                    'verbose': 'true'
+                }.items()
+    )
+    
 
     # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have a single robot.
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
-                        arguments=['-topic', 'robot_description',
-                                   '-entity', 'my_bot'],
-                        output='screen')
+                        arguments=[
+                            '-topic', 'robot_description',
+                            '-entity', 'my_ackermann_robot',
+                            '-x', '0',
+                            '-y', '0', 
+                            '-z', '0.1'
+                        ],
+                        output='screen'
+    )
+
+    # Launch RViz2 with your robot visualization config
+    rviz_config_file = os.path.join(
+        get_package_share_directory(package_name),
+        'config',
+        'view_robot.rviz'
+    )
+    
+    rviz2 = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        arguments=['-d', rviz_config_file],
+        parameters=[{'use_sim_time': True}],
+        output='screen'
+    )
 
 
     # Launch them all!
@@ -44,4 +71,5 @@ def generate_launch_description():
         rsp,
         gazebo,
         spawn_entity,
+        rviz2,
     ])
