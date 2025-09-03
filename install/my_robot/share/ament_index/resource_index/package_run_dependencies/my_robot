@@ -1,1 +1,1 @@
-/home/pawan/dev_ws/build/my_robot/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/my_robot
+robot_state_publisher;joint_state_publisher;urdf;xacro;ros_gz_sim;ros_gz_bridge;gazebo_ros_pkgs;ros2_control;ros2_controllers;gz_ros2_control;controller_manager;rclpy;std_msgs;geometry_msgs;tf2_ros;joy;teleop_twist_joy;rviz2;ament_lint_auto;ament_lint_common

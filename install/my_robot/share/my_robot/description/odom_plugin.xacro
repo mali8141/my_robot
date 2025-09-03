@@ -1,1 +1,20 @@
-/home/pawan/dev_ws/src/my_robot/description/odom_plugin.xacro
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Gazebo odometry plugin -->
+  <gazebo>
+    <plugin filename="ignition-gazebo-odometry-publisher-system" 
+            name="ignition::gazebo::systems::OdometryPublisher">
+      
+      <robot_base_frame>base_footprint</robot_base_frame>
+      <odom_frame>odom</odom_frame>
+      <odom_topic>odom</odom_topic>
+      <tf_topic>tf</tf_topic>
+      <odom_publish_frequency>50.0</odom_publish_frequency>
+      <publish_tf>true</publish_tf>
+      <gaussian_noise>0.01</gaussian_noise>
+      
+    </plugin>
+  </gazebo>
+
+</robot>

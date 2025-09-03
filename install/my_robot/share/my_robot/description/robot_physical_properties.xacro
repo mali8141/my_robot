@@ -1,1 +1,24 @@
-/home/pawan/dev_ws/src/my_robot/description/robot_physical_properties.xacro
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- Constants for robot dimensions -->
+
+    <xacro:property name="base_mass" value="4.0" />
+    <xacro:property name="base_width" value="0.17" />
+    <xacro:property name="base_length" value="0.42" />
+    <xacro:property name="base_height" value="0.13" />
+
+    <xacro:property name="wheel_mass" value="0.3" />
+    <xacro:property name="wheel_length" value="0.045" />
+    <xacro:property name="wheel_radius" value="0.05" />
+
+    <xacro:property name="wheel_connector_length" value="0.1" />
+    <xacro:property name="wheel_connector_radius" value="0.01" />
+    <xacro:property name="wheel_connector_mass" value="0.01" />
+    <!--
+    <xacro:property name="bottom_to_top_connector_length" value="0.1" />
+    <xacro:property name="bottom_to_top_connector_radius" value="0.005" />
+    <xacro:property name="bottom_to_top_connector_mass" value="0.01"/>
+    -->
+</robot>

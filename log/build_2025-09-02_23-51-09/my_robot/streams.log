@@ -1,0 +1,109 @@
+[0.006s] Invoking command in '/home/pawan/dev_ws/build/my_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/pawan/dev_ws/src/my_robot -DCMAKE_INSTALL_PREFIX=/home/pawan/dev_ws/install/my_robot
+[0.063s] -- The C compiler identification is GNU 11.4.0
+[0.126s] -- The CXX compiler identification is GNU 11.4.0
+[0.132s] -- Detecting C compiler ABI info
+[0.215s] -- Detecting C compiler ABI info - done
+[0.220s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.220s] -- Detecting C compile features
+[0.221s] -- Detecting C compile features - done
+[0.223s] -- Detecting CXX compiler ABI info
+[0.305s] -- Detecting CXX compiler ABI info - done
+[0.314s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.314s] -- Detecting CXX compile features
+[0.314s] -- Detecting CXX compile features - done
+[0.316s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.430s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.496s] -- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+[0.497s] -- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+[0.520s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.523s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.528s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.537s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.547s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.565s] -- Found tf2_ros: 0.25.16 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.615s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.617s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.699s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.734s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.769s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.778s] -- Looking for pthread.h
+[0.862s] -- Looking for pthread.h - found
+[0.862s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.932s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.934s] -- Found Threads: TRUE  
+[1.099s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.161s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.161s] -- Added test 'lint_cmake' to check CMake code style
+[1.161s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.162s] -- Added test 'xmllint' to check XML markup files
+[1.163s] -- Configuring done
+[1.167s] -- Generating done
+[1.169s] -- Build files have been written to: /home/pawan/dev_ws/build/my_robot
+[1.177s] Invoked command in '/home/pawan/dev_ws/build/my_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/pawan/dev_ws/src/my_robot -DCMAKE_INSTALL_PREFIX=/home/pawan/dev_ws/install/my_robot
+[1.179s] Invoking command in '/home/pawan/dev_ws/build/my_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pawan/dev_ws/build/my_robot -- -j20 -l20
+[1.245s] Built target ament_cmake_python_copy_my_robot
+[1.411s] running egg_info
+[1.411s] creating my_robot.egg-info
+[1.411s] writing my_robot.egg-info/PKG-INFO
+[1.411s] writing dependency_links to my_robot.egg-info/dependency_links.txt
+[1.411s] writing top-level names to my_robot.egg-info/top_level.txt
+[1.411s] writing manifest file 'my_robot.egg-info/SOURCES.txt'
+[1.412s] reading manifest file 'my_robot.egg-info/SOURCES.txt'
+[1.413s] writing manifest file 'my_robot.egg-info/SOURCES.txt'
+[1.432s] Built target ament_cmake_python_build_my_robot_egg
+[1.439s] Invoked command in '/home/pawan/dev_ws/build/my_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pawan/dev_ws/build/my_robot -- -j20 -l20
+[1.446s] Invoking command in '/home/pawan/dev_ws/build/my_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/pawan/dev_ws/build/my_robot
+[1.455s] -- Install configuration: ""
+[1.455s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/pythonpath.sh
+[1.455s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/pythonpath.dsv
+[1.455s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info
+[1.455s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/dependency_links.txt
+[1.455s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/SOURCES.txt
+[1.455s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/PKG-INFO
+[1.456s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/top_level.txt
+[1.456s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot
+[1.456s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/__init__.py
+[1.456s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/ackermann_controller.py
+[1.487s] Listing '/home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot'...
+[1.487s] Compiling '/home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/__init__.py'...
+[1.487s] Compiling '/home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/ackermann_controller.py'...
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/config
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/joystick.yaml
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/controllers.yaml
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/gazebo_params.yaml
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/ros_gz_bridge.yaml
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/parameters.yaml
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/description
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot.urdf.xacro
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/gazebo_parameters.xacro
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot_core.xacro
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/inertial_macros.xacro
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/ros2_control.xacro
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/odom_plugin.xacro
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/transmission.xacro
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot_physical_properties.xacro
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/materials.xacro
+[1.490s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/rsp.launch.py
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/view.launch.py
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/controller.launch.py
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/gazebo.launch.py
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/launch_sim.launch.py
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/joystick.launch.py
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/lib/my_robot/ackermann_controller.py
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/package_run_dependencies/my_robot
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/parent_prefix_path/my_robot
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/ament_prefix_path.sh
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/ament_prefix_path.dsv
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/path.sh
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/path.dsv
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.bash
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.sh
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.zsh
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.dsv
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/package.dsv
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/packages/my_robot
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/cmake/my_robotConfig.cmake
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/cmake/my_robotConfig-version.cmake
+[1.491s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/package.xml
+[1.493s] Invoked command in '/home/pawan/dev_ws/build/my_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/pawan/dev_ws/build/my_robot

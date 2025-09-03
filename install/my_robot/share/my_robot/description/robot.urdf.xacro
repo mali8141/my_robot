@@ -1,1 +1,10 @@
-/home/pawan/dev_ws/src/my_robot/description/robot.urdf.xacro
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
+
+    <xacro:include filename="robot_core.xacro" />
+    <xacro:include filename="gazebo_parameters.xacro"/>
+    <xacro:include filename="ros2_control.xacro" />
+    <xacro:include filename="transmission.xacro" />
+    <xacro:include filename="odom_plugin.xacro" />
+
+</robot>

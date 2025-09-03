@@ -1,1 +1,3 @@
-/home/pawan/dev_ws/build/my_robot/ament_cmake_environment_hooks/local_setup.dsv
+source;share/my_robot/environment/ament_prefix_path.sh
+source;share/my_robot/environment/path.sh
+source;share/my_robot/environment/pythonpath.sh
