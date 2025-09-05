@@ -34,10 +34,5 @@ def generate_launch_description():
             parameters=[slam_params]
         ),
         
-        # RViz
-        Node(
-            package='rviz2',
-            executable='rviz2',
-            output='screen'
-        ),
+
     ])

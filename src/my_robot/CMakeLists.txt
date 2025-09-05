@@ -22,6 +22,11 @@ install(DIRECTORY
   DESTINATION share/${PROJECT_NAME}
 )
 
+install(DIRECTORY
+  worlds
+  DESTINATION share/${PROJECT_NAME}/
+)
+
 # Install Python executables
 install(PROGRAMS
   my_robot/ackermann_controller.py

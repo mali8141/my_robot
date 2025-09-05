@@ -75,6 +75,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_robot/" TYPE DIRECTORY FILES "/home/pawan/dev_ws/src/my_robot/worlds")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/my_robot" TYPE PROGRAM FILES
     "/home/pawan/dev_ws/src/my_robot/my_robot/ackermann_controller.py"
     "/home/pawan/dev_ws/src/my_robot/my_robot/keyboard_teleop.py"

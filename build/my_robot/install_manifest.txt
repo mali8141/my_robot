@@ -10,7 +10,6 @@
 /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/xbox_controller.py
 /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/ultrasonic_publisher.py
 /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/keyboard_teleop.py
-/home/pawan/dev_ws/install/my_robot/share/my_robot/config/joystick.yaml
 /home/pawan/dev_ws/install/my_robot/share/my_robot/config/controllers.yaml
 /home/pawan/dev_ws/install/my_robot/share/my_robot/config/gazebo_params.yaml
 /home/pawan/dev_ws/install/my_robot/share/my_robot/config/slam_params.yaml
@@ -33,8 +32,9 @@
 /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/controller.launch.py
 /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/gazebo.launch.py
 /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/launch_sim.launch.py
-/home/pawan/dev_ws/install/my_robot/share/my_robot/launch/joystick.launch.py
 /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/xbox.launch.py
+/home/pawan/dev_ws/install/my_robot/share/my_robot//worlds/obstacles.sdf
+/home/pawan/dev_ws/install/my_robot/share/my_robot//worlds/maze.sdf
 /home/pawan/dev_ws/install/my_robot/lib/my_robot/ackermann_controller.py
 /home/pawan/dev_ws/install/my_robot/lib/my_robot/keyboard_teleop.py
 /home/pawan/dev_ws/install/my_robot/lib/my_robot/xbox_controller.py
