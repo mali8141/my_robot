@@ -107,7 +107,7 @@
 			{
 				"command" : 9,
 				"file" : 3,
-				"line" : 40,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
@@ -359,7 +359,8 @@
 			[
 				"my_robot/ackermann_controller.py",
 				"my_robot/keyboard_teleop.py",
-				"my_robot/xbox_controller.py"
+				"my_robot/xbox_controller.py",
+				"my_robot/sensor_fusion.py"
 			],
 			"type" : "file"
 		},

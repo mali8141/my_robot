@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- SRF08 Ultrasonic Sensor Macro with Gazebo plugin -->
+    <xacro:macro name="srf08_sensor" params="name parent x y z yaw">
+        
+        <joint name="${name}_joint" type="fixed">
+            <parent link="${parent}"/>
+            <child link="${name}_frame"/>
+            <origin xyz="${x} ${y} ${z}" rpy="0 0 ${yaw}"/>
+        </joint>
+
+        <link name="${name}_frame">
+            <visual>
+                <geometry>
+                    <cylinder radius="0.008" length="0.015"/>
+                </geometry>
+                <material name="blue"/>
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder radius="0.008" length="0.015"/>
+                </geometry>
+            </collision>
+            <xacro:inertial_cylinder mass="0.01" length="0.015" radius="0.008">
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+            </xacro:inertial_cylinder>
+        </link>
+
+        <!-- Gazebo sensor plugin (simulates SRF08) -->
+        <gazebo reference="${name}_frame">
+            <material>Gazebo/Blue</material>
+            
+            <sensor name="${name}" type="ray">
+                <pose>0 0 0 0 0 0</pose>
+                <visualize>true</visualize>
+                <update_rate>10</update_rate>
+                <ray>
+                    <scan>
+                        <horizontal>
+                            <samples>5</samples>
+                            <min_angle>-0.26</min_angle>  <!-- ~30 degrees spread -->
+                            <max_angle>0.26</max_angle>
+                        </horizontal>
+                    </scan>
+                    <range>
+                        <min>0.03</min>  <!-- SRF08 min range -->
+                        <max>6.0</max>   <!-- SRF08 max range -->
+                    </range>
+                </ray>
+                <plugin name="${name}_controller" filename="libgazebo_ros_ray_sensor.so">
+                    <ros>
+                        <remapping>~/out:=ultrasonic/${name}</remapping>
+                    </ros>
+                    <output_type>sensor_msgs/LaserScan</output_type>
+                    <frame_name>${name}_frame</frame_name>
+                </plugin>
+            </sensor>
+        </gazebo>
+
+    </xacro:macro>
+
+    <!-- Add all 6 sensors based on your layout -->
+    <xacro:macro name="add_ultrasonic_sensors" params="parent">
+        
+        <!-- Front sensor (S1) -->
+        <xacro:srf08_sensor name="s1_front" parent="${parent}" 
+                           x="0.19" y="0" z="0.0725" yaw="0"/>
+        
+        <!-- Front-right sensor (S2) -->
+        <xacro:srf08_sensor name="s2_front_right" parent="${parent}" 
+                           x="0.13" y="-0.075" z="0.0725" yaw="-1.047"/>
+        
+        <!-- Back-right sensor (S3) -->  
+        <xacro:srf08_sensor name="s3_back_right" parent="${parent}" 
+                           x="-0.13" y="-0.075" z="0.0725" yaw="-2.094"/>
+        
+        <!-- Back sensor (S4) -->
+        <xacro:srf08_sensor name="s4_back" parent="${parent}" 
+                           x="-0.19" y="0" z="0.0725" yaw="3.14159"/>
+        
+        <!-- Back-left sensor (S5) -->
+        <xacro:srf08_sensor name="s5_back_left" parent="${parent}" 
+                           x="-0.13" y="0.075" z="0.0725" yaw="2.094"/>
+        
+        <!-- Front-left sensor (S6) -->
+        <xacro:srf08_sensor name="s6_front_left" parent="${parent}" 
+                           x="0.13" y="0.075" z="0.0725" yaw="1.047"/>
+
+    </xacro:macro>
+
+</robot>

@@ -5,12 +5,15 @@
 /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/PKG-INFO
 /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/top_level.txt
 /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/__init__.py
+/home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/sensor_fusion.py
 /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/ackermann_controller.py
 /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/xbox_controller.py
+/home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/ultrasonic_publisher.py
 /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/keyboard_teleop.py
 /home/pawan/dev_ws/install/my_robot/share/my_robot/config/joystick.yaml
 /home/pawan/dev_ws/install/my_robot/share/my_robot/config/controllers.yaml
 /home/pawan/dev_ws/install/my_robot/share/my_robot/config/gazebo_params.yaml
+/home/pawan/dev_ws/install/my_robot/share/my_robot/config/slam_params.yaml
 /home/pawan/dev_ws/install/my_robot/share/my_robot/config/ros_gz_bridge.yaml
 /home/pawan/dev_ws/install/my_robot/share/my_robot/config/parameters.yaml
 /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot.urdf.xacro
@@ -20,8 +23,10 @@
 /home/pawan/dev_ws/install/my_robot/share/my_robot/description/ros2_control.xacro
 /home/pawan/dev_ws/install/my_robot/share/my_robot/description/odom_plugin.xacro
 /home/pawan/dev_ws/install/my_robot/share/my_robot/description/transmission.xacro
+/home/pawan/dev_ws/install/my_robot/share/my_robot/description/sensors.xacro
 /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot_physical_properties.xacro
 /home/pawan/dev_ws/install/my_robot/share/my_robot/description/materials.xacro
+/home/pawan/dev_ws/install/my_robot/share/my_robot/launch/slam.launch.py
 /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/ackermann_teleop.launch.py
 /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/rsp.launch.py
 /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/view.launch.py
@@ -33,6 +38,7 @@
 /home/pawan/dev_ws/install/my_robot/lib/my_robot/ackermann_controller.py
 /home/pawan/dev_ws/install/my_robot/lib/my_robot/keyboard_teleop.py
 /home/pawan/dev_ws/install/my_robot/lib/my_robot/xbox_controller.py
+/home/pawan/dev_ws/install/my_robot/lib/my_robot/sensor_fusion.py
 /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/package_run_dependencies/my_robot
 /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/parent_prefix_path/my_robot
 /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/ament_prefix_path.sh
