@@ -84,6 +84,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/pawan/dev_ws/src/my_robot/my_robot/keyboard_teleop.py"
     "/home/pawan/dev_ws/src/my_robot/my_robot/xbox_controller.py"
     "/home/pawan/dev_ws/src/my_robot/my_robot/sensor_fusion.py"
+    "/home/pawan/dev_ws/src/my_robot/my_robot/ultrasonic_publisher.py"
     )
 endif()
 

@@ -17,13 +17,13 @@ class XboxController(Node):
         self.velocity_pub = self.create_publisher(Float64, '/velocity', 10)
         
         print("Xbox Controller Ready!")
-        print("Left stick: steering and velocity")
+        print("Left stick: forward/backward, Right stick: steering")
         print("Hold Right Bumper (RB) to enable")
 
     def joy_callback(self, msg):
         # Xbox controller mapping
         velocity = msg.axes[1] * 2.0    # Left stick Y * max speed
-        steering = msg.axes[0] * 0.5    # Left stick X * max angle
+        steering = -msg.axes[3] * 0.5    # Left stick X * max angle
         enable = msg.buttons[5]         # Right bumper
         
         # Only move if RB is pressed

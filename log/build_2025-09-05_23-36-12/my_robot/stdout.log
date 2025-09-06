@@ -1,0 +1,92 @@
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclpy: 3.3.17 (/opt/ros/humble/share/rclpy/cmake)
+-- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found tf2_ros: 0.25.16 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/pawan/dev_ws/build/my_robot
+Built target ament_cmake_python_copy_my_robot
+running egg_info
+writing my_robot.egg-info/PKG-INFO
+writing dependency_links to my_robot.egg-info/dependency_links.txt
+writing top-level names to my_robot.egg-info/top_level.txt
+reading manifest file 'my_robot.egg-info/SOURCES.txt'
+writing manifest file 'my_robot.egg-info/SOURCES.txt'
+Built target ament_cmake_python_build_my_robot_egg
+-- Install configuration: ""
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/pythonpath.sh
+-- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/pythonpath.dsv
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info
+-- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/dependency_links.txt
+-- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/SOURCES.txt
+-- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/PKG-INFO
+-- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/top_level.txt
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/__init__.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/sensor_fusion.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/ackermann_controller.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/xbox_controller.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/ultrasonic_publisher.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/keyboard_teleop.py
+Listing '/home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot'...
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/controllers.yaml
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/gazebo_params.yaml
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/slam_params.yaml
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/ros_gz_bridge.yaml
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/parameters.yaml
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot.urdf.xacro
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/gazebo_parameters.xacro
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot_core.xacro
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/inertial_macros.xacro
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/ros2_control.xacro
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/odom_plugin.xacro
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/transmission.xacro
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/sensors.xacro
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot_physical_properties.xacro
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/materials.xacro
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch
+-- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/slam.launch.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/ackermann_teleop.launch.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/rsp.launch.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/view.launch.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/controller.launch.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/gazebo.launch.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/launch_sim.launch.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/xbox.launch.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot//worlds
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot//worlds/obstacles.sdf
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot//worlds/maze.sdf
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/lib/my_robot/ackermann_controller.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/lib/my_robot/keyboard_teleop.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/lib/my_robot/xbox_controller.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/lib/my_robot/sensor_fusion.py
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/package_run_dependencies/my_robot
+-- Installing: /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/parent_prefix_path/my_robot
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/ament_prefix_path.sh
+-- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/path.sh
+-- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/path.dsv
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.bash
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.sh
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.zsh
+-- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.dsv
+-- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/package.dsv
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/packages/my_robot
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/cmake/my_robotConfig.cmake
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/cmake/my_robotConfig-version.cmake
+-- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/package.xml

@@ -1,1 +1,1 @@
-controller_manager:gazebo_ros_pkgs:geometry_msgs:gz_ros2_control:joint_state_publisher:joy:rclpy:robot_state_publisher:ros2_control:ros2_controllers:ros_gz_bridge:ros_gz_sim:rviz2:std_msgs:teleop_twist_joy:tf2_ros:urdf:xacro
+controller_manager:gazebo_ros_pkgs:geometry_msgs:gz_ros2_control:joint_state_publisher:joy:rclpy:robot_state_publisher:ros2_control:ros2_controllers:ros_gz_bridge:ros_gz_sim:rviz2:sensor_msgs:slam_toolbox:std_msgs:teleop_twist_joy:tf2_ros:urdf:xacro

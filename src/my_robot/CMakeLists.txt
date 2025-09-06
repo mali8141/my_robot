@@ -33,6 +33,7 @@ install(PROGRAMS
   my_robot/keyboard_teleop.py
   my_robot/xbox_controller.py
   my_robot/sensor_fusion.py
+  my_robot/ultrasonic_publisher.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
