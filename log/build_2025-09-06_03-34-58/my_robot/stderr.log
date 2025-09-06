@@ -1,0 +1,6 @@
+[31mCMake Error at cmake_install.cmake:82 (file):
+  file INSTALL cannot find
+  "/home/pawan/dev_ws/src/my_robot/my_robot/ultrasonic_publisher.py": No such
+  file or directory.
+
+[0m

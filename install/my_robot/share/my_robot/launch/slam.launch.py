@@ -9,7 +9,7 @@ import os
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time')
     pkg_dir = get_package_share_directory('my_robot')
-    slam_params = os.path.join(pkg_dir, 'config', 'slam_params.yaml')
+    slam_params = os.path.join(pkg_dir, 'config', 'srf08_slam_params.yaml')
     
     return LaunchDescription([
         # Declare the launch argument
@@ -26,15 +26,15 @@ def generate_launch_description():
             ])
         ),
         
-        # Use ultrasonic_publisher instead of sensor_fusion for better sensor modeling
+        # SRF08 Ultrasonic Array Publisher
         Node(
             package='my_robot',
-            executable='ultrasonic_publisher.py',  # Changed from sensor_fusion.py
+            executable='srf08_publisher.py',  # Use SRF08-specific publisher
             output='screen',
             parameters=[{'use_sim_time': use_sim_time}]
         ),
         
-        # SLAM Toolbox
+        # SLAM Toolbox with SRF08-optimized parameters
         Node(
             package='slam_toolbox',
             executable='async_slam_toolbox_node',
