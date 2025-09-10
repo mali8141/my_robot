@@ -1,0 +1,77 @@
+[0.008s] Invoking command in '/home/pawan/dev_ws/build/my_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pawan/dev_ws/build/my_robot -- -j20 -l20
+[0.065s] Built target ament_cmake_python_copy_my_robot
+[0.223s] running egg_info
+[0.223s] writing my_robot.egg-info/PKG-INFO
+[0.224s] writing dependency_links to my_robot.egg-info/dependency_links.txt
+[0.224s] writing top-level names to my_robot.egg-info/top_level.txt
+[0.225s] reading manifest file 'my_robot.egg-info/SOURCES.txt'
+[0.225s] writing manifest file 'my_robot.egg-info/SOURCES.txt'
+[0.244s] Built target ament_cmake_python_build_my_robot_egg
+[0.252s] Invoked command in '/home/pawan/dev_ws/build/my_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/pawan/dev_ws/build/my_robot -- -j20 -l20
+[0.261s] Invoking command in '/home/pawan/dev_ws/build/my_robot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/pawan/dev_ws/build/my_robot
+[0.270s] -- Install configuration: ""
+[0.270s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/pythonpath.sh
+[0.270s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/pythonpath.dsv
+[0.270s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info
+[0.270s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.271s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.271s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/PKG-INFO
+[0.271s] -- Installing: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot-0.0.0-py3.10.egg-info/top_level.txt
+[0.271s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot
+[0.271s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/__init__.py
+[0.271s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/sensor_fusion.py
+[0.271s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/ackermann_controller.py
+[0.271s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/xbox_controller.py
+[0.271s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/srf08_publisher.py
+[0.271s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot/keyboard_teleop.py
+[0.299s] Listing '/home/pawan/dev_ws/install/my_robot/local/lib/python3.10/dist-packages/my_robot'...
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/controllers.yaml
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/gazebo_params.yaml
+[0.302s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/slam_params.yaml
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/ros_gz_bridge.yaml
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/config/parameters.yaml
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot.urdf.xacro
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/gazebo_parameters.xacro
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot_core.xacro
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/inertial_macros.xacro
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/ros2_control.xacro
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/odom_plugin.xacro
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/transmission.xacro
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/sensors.xacro
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/robot_physical_properties.xacro
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/description/materials.xacro
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/slam.launch.py
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/ackermann_teleop.launch.py
+[0.302s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/rsp.launch.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/view.launch.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/controller.launch.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/gazebo.launch.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/launch_sim.launch.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/launch/xbox.launch.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot//worlds
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot//worlds/obstacles.sdf
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot//worlds/maze.sdf
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/lib/my_robot/ackermann_controller.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/lib/my_robot/keyboard_teleop.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/lib/my_robot/xbox_controller.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/lib/my_robot/sensor_fusion.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/lib/my_robot/srf08_publisher.py
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/package_run_dependencies/my_robot
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/parent_prefix_path/my_robot
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/ament_prefix_path.sh
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/ament_prefix_path.dsv
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/path.sh
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/environment/path.dsv
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.bash
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.sh
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.zsh
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/local_setup.dsv
+[0.303s] -- Installing: /home/pawan/dev_ws/install/my_robot/share/my_robot/package.dsv
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/ament_index/resource_index/packages/my_robot
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/cmake/my_robotConfig.cmake
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/cmake/my_robotConfig-version.cmake
+[0.303s] -- Up-to-date: /home/pawan/dev_ws/install/my_robot/share/my_robot/package.xml
+[0.304s] Invoked command in '/home/pawan/dev_ws/build/my_robot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/pawan/dev_ws/build/my_robot

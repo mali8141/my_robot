@@ -1,0 +1,46 @@
+# ros_gz_bridge configuration for ultrasonic sensors
+# Save this as: config/ros_gz_bridge_ultrasonic.yaml
+
+# Clock synchronization
+- ros_topic_name: "clock"
+  gz_topic_name: "clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: "GZ_TO_ROS"
+
+# Ultrasonic sensor bridges
+- ros_topic_name: "ultrasonic/s1_front"
+  gz_topic_name: "/gz/ultrasonic/s1_front"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "ultrasonic/s2_front_right"
+  gz_topic_name: "/gz/ultrasonic/s2_front_right"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "ultrasonic/s3_back_right"
+  gz_topic_name: "/gz/ultrasonic/s3_back_right"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "ultrasonic/s4_back"
+  gz_topic_name: "/gz/ultrasonic/s4_back"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "ultrasonic/s5_back_left"
+  gz_topic_name: "/gz/ultrasonic/s5_back_left"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: "GZ_TO_ROS"
+
+- ros_topic_name: "ultrasonic/s6_front_left"
+  gz_topic_name: "/gz/ultrasonic/s6_front_left"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: "GZ_TO_ROS"
