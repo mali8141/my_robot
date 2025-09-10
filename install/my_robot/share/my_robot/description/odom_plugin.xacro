@@ -12,7 +12,7 @@
       <tf_topic>tf</tf_topic>
       <odom_publish_frequency>50.0</odom_publish_frequency>
       <publish_tf>true</publish_tf>
-      <gaussian_noise>0.01</gaussian_noise>
+      <gaussian_noise>0.005</gaussian_noise>              <!-- ✅ REDUCED: Less noise for stability -->
       
     </plugin>
   </gazebo>

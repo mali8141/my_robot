@@ -14,7 +14,7 @@ from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
     pkg_dir = get_package_share_directory("my_robot")
-    
+    use_sim_time = LaunchConfiguration("use_sim_time")
     # Add maze world path
     maze_world = os.path.join(pkg_dir, "worlds", "maze.sdf")
     
@@ -66,13 +66,16 @@ def generate_launch_description():
         arguments=["--ros-args", "-p", f"config_file:={bridge_params}"],
     )
     
-    rviz_path = PathJoinSubstitution([pkg_dir, "rviz", "rviz.rviz"])
+    rviz_path = PathJoinSubstitution([pkg_dir, "rviz", "slam.rviz"])
     rviz2_node = Node(
         package="rviz2",
         executable="rviz2",
         name="rviz2",
         output="screen",
-        arguments=["-d", rviz_path],
+        arguments=['-d', os.path.join(pkg_dir, 'rviz', 'slam.rviz')],
+        parameters=[{'use_sim_time': use_sim_time}],
+        respawn=True,
+        respawn_delay=5.0     
     )
     
     return LaunchDescription([

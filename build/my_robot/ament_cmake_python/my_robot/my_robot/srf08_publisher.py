@@ -43,8 +43,8 @@ class SRF08Publisher(Node):
         
         # Timer - SRF08 typically runs at 10Hz
         self.timer = self.create_timer(0.1, self.publish_scan)
-        self.get_logger().info('SRF08 Ultrasonic Array Publisher Started')
-        self.get_logger().info('Simulating 6 SRF08 sensors with realistic characteristics')
+        self.get_logger().info('SRF08 Ultrasonic Array Publisher Started - MAZE ENVIRONMENT')
+        self.get_logger().info('Environment synchronized with maze.sdf')
 
     def odom_callback(self, msg):
         """Update robot position from odometry"""
@@ -73,100 +73,134 @@ class SRF08Publisher(Node):
         sensor_angle_rad = math.radians(sensor_info['angle'])
         global_beam_angle = self.robot_yaw + sensor_angle_rad
         
-        # Simulate environment with walls and obstacles
-        min_distance = self.simulate_environment_distance(
+        # Simulate environment distance matching maze.sdf
+        min_distance = self.simulate_maze_environment(
             sensor_global_x, sensor_global_y, global_beam_angle)
         
         # SRF08-specific characteristics
-        # 1. Quantize to 1cm resolution (SRF08 characteristic)
-        distance_cm = round(min_distance * 100)  # Convert to cm and round
-        quantized_distance = distance_cm / 100.0  # Convert back to meters
+        # 1. Quantize to 1cm resolution
+        distance_cm = round(min_distance * 100)
+        quantized_distance = distance_cm / 100.0
         
-        # 2. Add SRF08 measurement noise (±1-2cm typical)
-        noise = random.uniform(-0.02, 0.02)
+        # 2. Add SRF08 measurement noise (±1-2cm)
+        noise = random.uniform(-0.01, 0.01)  # Reduced noise
         noisy_distance = quantized_distance + noise
         
         # 3. SRF08 range limits (3cm to 6m)
         final_distance = max(0.03, min(6.0, noisy_distance))
         
-        # 4. Occasionally simulate no-echo (SRF08 returns 0 when no echo)
-        # This happens with soft surfaces or out-of-range targets
-        if random.random() < 0.05:  # 5% chance of no echo
-            if sensor_name in ['s1_front', 's4_back']:  # Less likely for front/back
-                if random.random() < 0.3:
-                    return 6.0  # Return max range for no echo
-            else:
-                return 6.0  # Return max range for no echo
+        # 4. Reduced no-echo simulation for stability
+        if random.random() < 0.02:  # 2% chance (reduced from 5%)
+            return 6.0
         
         return final_distance
 
-    def simulate_environment_distance(self, sensor_x, sensor_y, beam_angle):
-        """Simulate realistic environment for SRF08 sensor"""
-        
-        # Define a test environment (room with obstacles)
-        # Room boundaries: 8m x 8m room
-        room_size = 4.0  # ±4m from origin
+    def simulate_maze_environment(self, sensor_x, sensor_y, beam_angle):
+        """Simulate environment matching your maze.sdf file"""
         
         cos_beam = math.cos(beam_angle)
         sin_beam = math.sin(beam_angle)
         
-        # Calculate distance to walls
-        wall_distances = []
-        
-        # Check X walls
-        if abs(cos_beam) > 0.001:
-            if cos_beam > 0:  # Positive X direction
-                dist_to_wall = (room_size - sensor_x) / cos_beam
-            else:  # Negative X direction  
-                dist_to_wall = (-room_size - sensor_x) / cos_beam
-            if dist_to_wall > 0:
-                wall_distances.append(dist_to_wall)
-        
-        # Check Y walls
-        if abs(sin_beam) > 0.001:
-            if sin_beam > 0:  # Positive Y direction
-                dist_to_wall = (room_size - sensor_y) / sin_beam
-            else:  # Negative Y direction
-                dist_to_wall = (-room_size - sensor_y) / sin_beam
-            if dist_to_wall > 0:
-                wall_distances.append(dist_to_wall)
-        
-        min_wall_distance = min(wall_distances) if wall_distances else 6.0
-        
-        # Add some obstacles in the environment
-        obstacles = [
-            {'x': 1.5, 'y': 1.5, 'radius': 0.3},   # Cylindrical obstacle 1
-            {'x': -2.0, 'y': -1.0, 'radius': 0.25}, # Cylindrical obstacle 2
-            {'x': 0.5, 'y': -2.5, 'radius': 0.4},  # Cylindrical obstacle 3
+        # Exact maze walls from your maze.sdf
+        maze_walls = [
+            # Boundary walls
+            [-10.005, 0, 0.01, 20],    # Left boundary
+            [10.005, 0, 0.01, 20],     # Right boundary
+            [0, 10.005, 20, 0.01],     # Top boundary
+            [0, -10.005, 20, 0.01],    # Bottom boundary
+            
+            # Interior obstacles from maze.sdf
+            [-6.5, -9, 1, 2],          # wall1
+            [-8.5, -6.5, 3, 1],        # wall2
+            [-3.5, -7, 1, 6],          # wall3
+            [2.5, -9, 1, 2],           # wall4
+            [7, -8.5, 2, 1],           # wall5
+            [-9, -0.5, 2, 1],          # wall6
+            [-8.5, -2.5, 1, 3],        # wall7
+            [-4.5, -1.5, 1, 1],        # wall8
+            [-6, 1, 2, 2],             # wall9
+            [-7.5, 4.5, 5, 1],         # wall10
+            [-3, 7.5, 4, 1],           # wall11
+            [0, 5.5, 2, 9],            # wall12 - major central wall
+            [0, -2.5, 2, 1],           # wall13
+            [-0.5, -1.5, 1, 1],        # wall14
+            [-0.5, -4.5, 1, 1],        # wall15
+            [0.5, -5.5, 3, 1],         # wall16
+            [2.5, -4.5, 3, 1],         # wall17
+            [4.5, -5.5, 3, 1],         # wall18
+            [6.5, -4.5, 3, 1],         # wall19
+            [8.5, -5.5, 3, 1],         # wall20
+            [9.5, -4.5, 1, 1],         # wall21
+            [3.5, -0.5, 1, 3],         # wall22
+            [7, 0.5, 6, 1],            # wall23
+            [7.5, 2, 1, 2],            # wall24
+            [1.5, 5.5, 1, 1],          # wall25
+            [2.5, 6, 1, 2],            # wall26
+            [3.5, 7.5, 1, 3],          # wall27
+            [4.5, 8.5, 1, 1],          # wall28
+            [5.5, 9, 1, 2],            # wall29
+            [6.5, 9.5, 1, 1],          # wall30
+            [4.5, 3, 1, 2],            # wall31
+            [5.5, 4, 1, 2],            # wall32
+            [6.5, 5, 1, 2],            # wall33
+            [7.5, 6, 1, 2],            # wall34
+            [8.5, 7, 1, 2],            # wall35
+            [9.5, 8, 1, 2],            # wall36
         ]
         
-        min_obstacle_distance = 6.0
+        min_distance = 6.0  # SRF08 max range
         
-        for obstacle in obstacles:
-            # Vector from sensor to obstacle center
-            dx = obstacle['x'] - sensor_x
-            dy = obstacle['y'] - sensor_y
+        # Check intersections with all walls
+        for wall in maze_walls:
+            wall_x, wall_y, wall_w, wall_h = wall
             
-            # Distance to obstacle center
-            center_distance = math.sqrt(dx*dx + dy*dy)
+            # Wall boundaries
+            wall_left = wall_x - wall_w/2
+            wall_right = wall_x + wall_w/2
+            wall_bottom = wall_y - wall_h/2
+            wall_top = wall_y + wall_h/2
             
-            if center_distance > 0.001:  # Avoid division by zero
-                # Angle to obstacle center
-                obstacle_angle = math.atan2(dy, dx)
-                
-                # Check if obstacle is within SRF08 beam cone (±15 degrees)
-                angle_diff = abs(beam_angle - obstacle_angle)
-                if angle_diff > math.pi:
-                    angle_diff = 2*math.pi - angle_diff
-                
-                # SRF08 has ~30-degree beam width (±15 degrees)
-                if angle_diff < math.radians(15):
-                    # Calculate distance to obstacle surface
-                    surface_distance = center_distance - obstacle['radius']
-                    if surface_distance > 0:
-                        min_obstacle_distance = min(min_obstacle_distance, surface_distance)
+            # Check intersection with each wall edge
+            intersections = []
+            
+            # Left edge (vertical line at wall_left)
+            if abs(cos_beam) > 0.001:
+                t = (wall_left - sensor_x) / cos_beam
+                if t > 0:
+                    y_intersect = sensor_y + t * sin_beam
+                    if wall_bottom <= y_intersect <= wall_top:
+                        intersections.append(t)
+            
+            # Right edge (vertical line at wall_right)
+            if abs(cos_beam) > 0.001:
+                t = (wall_right - sensor_x) / cos_beam
+                if t > 0:
+                    y_intersect = sensor_y + t * sin_beam
+                    if wall_bottom <= y_intersect <= wall_top:
+                        intersections.append(t)
+            
+            # Bottom edge (horizontal line at wall_bottom)
+            if abs(sin_beam) > 0.001:
+                t = (wall_bottom - sensor_y) / sin_beam
+                if t > 0:
+                    x_intersect = sensor_x + t * cos_beam
+                    if wall_left <= x_intersect <= wall_right:
+                        intersections.append(t)
+            
+            # Top edge (horizontal line at wall_top)
+            if abs(sin_beam) > 0.001:
+                t = (wall_top - sensor_y) / sin_beam
+                if t > 0:
+                    x_intersect = sensor_x + t * cos_beam
+                    if wall_left <= x_intersect <= wall_right:
+                        intersections.append(t)
+            
+            # Use closest intersection
+            if intersections:
+                closest_distance = min(intersections)
+                min_distance = min(min_distance, closest_distance)
         
-        return min(min_wall_distance, min_obstacle_distance)
+        return min_distance
 
     def publish_individual_sensors(self):
         """Publish individual Range messages for each SRF08 sensor"""
@@ -218,12 +252,10 @@ class SRF08Publisher(Node):
                 scan.ranges[angle_index] = self.sensor_readings[sensor_name]
                 
                 # Fill in nearby points to simulate SRF08 beam width
-                # SRF08 has ~30° beam, so fill ±15° around main direction
                 beam_spread = 15  # degrees
                 for offset in range(-beam_spread, beam_spread + 1):
                     nearby_index = angle_index + offset
                     if 0 <= nearby_index < len(scan.ranges):
-                        # Slightly increase range for off-axis readings
                         adjusted_range = self.sensor_readings[sensor_name] * (1 + abs(offset) * 0.02)
                         if scan.ranges[nearby_index] == float('inf'):
                             scan.ranges[nearby_index] = min(adjusted_range, scan.range_max)
@@ -238,7 +270,7 @@ class SRF08Publisher(Node):
             
         if self.debug_counter % 50 == 0:
             self.get_logger().info(
-                f'SRF08 Readings - Front: {self.sensor_readings["s1_front"]:.2f}m, '
+                f'MAZE SRF08 Readings - Front: {self.sensor_readings["s1_front"]:.2f}m, '
                 f'Back: {self.sensor_readings["s4_back"]:.2f}m, '
                 f'Left: {self.sensor_readings["s6_front_left"]:.2f}m, '
                 f'Right: {self.sensor_readings["s2_front_right"]:.2f}m'

@@ -9,7 +9,7 @@ import os
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time')
     pkg_dir = get_package_share_directory('my_robot')
-    slam_params = os.path.join(pkg_dir, 'config', 'srf08_slam_params.yaml')
+    slam_params = os.path.join(pkg_dir, 'config', 'slam_params.yaml')
     
     return LaunchDescription([
         # Declare the launch argument

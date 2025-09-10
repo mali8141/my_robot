@@ -8,57 +8,56 @@ slam_toolbox:
     ceres_dogleg_type: TRADITIONAL_DOGLEG
     ceres_loss_function: None
 
-    # ROS Parameters
+    # ROS Parameters - FIXED coordinate frames
     odom_frame: odom
     map_frame: map
-    base_frame: base_link
+    base_frame: base_footprint                  # ✅ FIXED: Matches odometry plugin
     scan_topic: /scan
     mode: mapping
 
-    # Transform publishing
-    transform_publish_period: 0.05
-    tf_buffer_duration: 10.0
-    stack_size_to_use: 20000000
-    enable_interactive_mode: true
-
-    # General Parameters - Optimized for SRF08 sparse data
-    use_scan_matching: true
+    # EMERGENCY: Conservative timing to prevent teleportation
+    transform_publish_period: 0.1          # Slower publishing
+    tf_buffer_duration: 5.0                # Shorter buffer
+    transform_timeout: 1.0                 # Longer timeout
+    minimum_time_interval: 0.5             # Process less frequently
+    
+    # EMERGENCY: Reduce processing load
+    stack_size_to_use: 40000000           
+    enable_interactive_mode: false        # Disable for stability
+    debug_logging: true                   # Enable debugging
+    
+    # EMERGENCY: Very conservative scan matching
+    use_scan_matching: true               # Keep enabled but conservative
     use_scan_barycenter: false
-    minimum_time_interval: 0.1  # Slower for sparse sensor data
-    transform_timeout: 0.2
-    map_update_interval: 2.0 
-
-
-    # SRF08-specific correlation parameters
-    # These are tuned for sparse, wide-beam ultrasonic sensors
-    scan_buffer_size: 10  # Larger buffer for sparse data
-    throttle_scans: 2     
-    scan_buffer_maximum_scan_distance: 12.0
-    link_match_minimum_response_fine: 0.1  # Very low for sparse sensors
-    link_scan_maximum_distance: 2.0  # Allow larger scan matching distance
+    minimum_travel_distance: 0.5          # Only process significant movements
+    minimum_travel_heading: 0.8           # Large rotation threshold
     
-    # Loop closure - more tolerant for ultrasonic
-    loop_search_maximum_distance: 3.0
+    # EMERGENCY: Conservative scan processing
+    scan_buffer_size: 5                   # Small buffer
+    throttle_scans: 3                     # Skip many scans
+    scan_buffer_maximum_scan_distance: 5.0
+    map_update_interval: 5.0              # Slow map updates
+    
+    # EMERGENCY: Trust odometry heavily
+    link_match_minimum_response_fine: 0.8  # Very high threshold
+    link_scan_maximum_distance: 0.5       # Very short matching distance
+    
+    # EMERGENCY: Disable loop closure completely
     do_loop_closing: false
-    loop_match_minimum_chain_size: 4  # Lower for sparse data
-    loop_match_maximum_variance_coarse: 5.0  # Higher tolerance
-    loop_match_minimum_response_coarse: 0.15  # Lower threshold
-    loop_match_minimum_response_fine: 0.25   # Lower threshold
     
-    # Correlation search space - wider for ultrasonics
-    correlation_search_space_dimension: 0.5  # Larger search space
-    correlation_search_space_resolution: 0.03
-    correlation_search_space_smear_deviation: 0.15
-
-    # Add these parameters for better movement detection
-    minimum_travel_distance: 0.1   # Minimum distance before processing
-    minimum_travel_heading: 0.2    # Minimum rotation before processing
-    motion_model_type: "differential_drive"  # If using differential drive
-    # Coarse matching - more tolerant
-    coarse_search_angle_offset: 0.175  # 30 degrees 0.524
-    coarse_angle_resolution: 0.0175     # 3 degrees
-    minimum_angle_penalty: 0.5
-    minimum_distance_penalty: 0.3
-    angle_variance_penalty: 0.1
-    distance_variance_penalty: 0.2
+    # EMERGENCY: Minimal correlation search
+    correlation_search_space_dimension: 0.1
+    correlation_search_space_resolution: 0.1
+    correlation_search_space_smear_deviation: 0.05
+    
+    # EMERGENCY: Trust odometry almost completely
+    angle_variance_penalty: 0.01          # Almost no angle correction
+    distance_variance_penalty: 0.01      # Almost no distance correction
+    minimum_angle_penalty: 0.1
+    minimum_distance_penalty: 0.1
+    
+    # EMERGENCY: Minimal angle search
+    coarse_search_angle_offset: 0.01      # Tiny search
+    fine_search_angle_offset: 0.001      # Minimal search
+    coarse_angle_resolution: 0.1
     use_response_expansion: false
